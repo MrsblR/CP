@@ -39,7 +39,7 @@ int main() {
     int blockSize = 64;
 
     for (int N : sizes) {
-        cout << "Probando multiplicación para tamaño de matriz " << N << "x" << N << ":" << endl;
+        cout << "Probando multiplicación para tamanio de matriz " << N << "x" << N << ":" << endl;
 
         vector<vector<int>> A(N, vector<int>(N, 1));
         vector<vector<int>> B(N, vector<int>(N, 2));
@@ -49,7 +49,7 @@ int main() {
         classicMatrixMultiplication(A, B, C, N);
         auto stop = high_resolution_clock::now();
         auto durationClassic = duration_cast<milliseconds>(stop - start);
-        cout << "Duración (clásica): " << durationClassic.count() << " ms" << endl;
+        cout << "Duracion (clasica): " << durationClassic.count() << " ms" << endl;
 
         fill(C.begin(), C.end(), vector<int>(N, 0));
 
@@ -57,7 +57,7 @@ int main() {
         blockMatrixMultiplication(A, B, C, N, blockSize);
         stop = high_resolution_clock::now();
         auto durationBlock = duration_cast<milliseconds>(stop - start);
-        cout << "Duración (por bloques): " << durationBlock.count() << " ms" << endl << endl;
+        cout << "Duracion (por bloques): " << durationBlock.count() << " ms" << endl << endl;
     }
 
     return 0;
